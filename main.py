@@ -3,7 +3,7 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import streamlit as st
-import chromadb
+#import chromadb
 import sqlite3
 from langchain_openai import OpenAI
 from langchain.chains import RetrievalQA
