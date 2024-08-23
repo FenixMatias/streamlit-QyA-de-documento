@@ -28,8 +28,9 @@ def generate_response(file, openai_api_key, query):
     for page in reader.pages:
         formatted_document.append(page.extract_text())
     #dividir archivo
+    max_prompt_length = 4097 - 256  # Restar el tamaño de la respuesta esperada
     text_splitter = CharacterTextSplitter(
-        chunk_size=1500,
+        chunk_size=max_prompt_length,
         chunk_overlap=0
     )
     docs = text_splitter.create_documents(formatted_document)
