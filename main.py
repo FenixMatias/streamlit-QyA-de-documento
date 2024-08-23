@@ -29,7 +29,7 @@ def generate_response(file, openai_api_key, query):
         formatted_document.append(page.extract_text())
     #dividir archivo
     text_splitter = CharacterTextSplitter(
-        chunk_size=1000,
+        chunk_size=2500,
         chunk_overlap=0
     )
     docs = text_splitter.create_documents(formatted_document)
